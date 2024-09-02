@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ricky Graydon Roberts - Junior Developer and Data Analyst">
+    <meta name="keywords" content="Ricky Graydon Roberts, Junior Developer, Data Analyst, Skunkworks Africa">
+    <title>Ricky Graydon Roberts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Binary Rain Canvas -->
+    <canvas id="binaryCanvas"></canvas>
+    
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="about.html" target="_blank"><i class="fas fa-user"></i> About</a> |
+        <a href="projects.html" target="_blank"><i class="fas fa-code"></i> Projects</a> |
+        <a href="skills.html" target="_blank"><i class="fas fa-cogs"></i> Skills</a> |
+        <a href="contact.html" target="_blank"><i class="fas fa-envelope"></i> Contact</a> |
+        <a href="My Badges.html" target="_blank"><i class="fas fa-certificate"></i> My Badges</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1><u>RICKY GRAYDON ROBERTS</u></h1>
+        <p id="student-id">Student ID: Graydon Truth ID : 103 <br> From Pero's Academy</p>
+        <a href="projects.html" class="btn">View My Projects</a>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome">
+        <p>
+            Tech enthusiast with a passion for cybersecurity, cloud computing, and innovation. With 26 badges from industry leaders like IBM, Google, and Cisco, I’m not just following trends—I’m shaping them. My expertise spans AI, IoT, and enterprise computing, driving impactful solutions. Outside of tech, I enjoy online gaming, golf, and football, always bringing strategy and precision to everything I do. Open to exciting projects and collaborations.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/ricky-roberts-995868314/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <p>&copy; 2024 Ricky Graydon Roberts</p>
+    </footer>
+
+    <!-- JavaScript for Binary Rain -->
+    <script>
+        const canvas = document.getElementById('binaryCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const binaryChars = '01';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = binaryChars.charAt(Math.floor(Math.random() * binaryChars.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        function animate() {
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+
+    <!-- Scroll to Top Function -->
+    <script>
+        let scrollBtn = document.getElementById("scrollBtn");
+        window.onscroll = function () { scrollFunction(); };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+
+</html>

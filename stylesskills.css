@@ -1,0 +1,182 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d;
+    overflow-x: hidden;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+nav a i {
+    margin-right: 0.5rem;
+}
+
+nav a:hover {
+    color: #ff00ff;
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+header {
+    color: #ccf2ff;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header .hero-content {
+    max-width: 800px;
+    margin: auto;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 4rem;
+    animation: slideUp 1s ease-in-out;
+}
+
+main h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: #ccf2ff;
+    margin-bottom: 1rem;
+    position: relative;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skills-category {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
+    margin: 1rem 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.skills-category h3 {
+    font-size: 1.75rem;
+    color: #0ff;
+    margin-bottom: 1rem;
+}
+
+.skills-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-category li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.skill-bar {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    height: 10px;
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00ffff 0%, #ff00ff 100%);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+footer p {
+    margin: 0;
+    color: #e0e0e0;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
+    to {
+        text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+    }
+}

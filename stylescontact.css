@@ -1,0 +1,219 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    background: #0d0d0d;
+    overflow-x: hidden;
+    position: relative;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+nav a i {
+    margin-right: 0.5rem;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+header {
+    color: #ccf2ff;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('path-to-your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header .hero-content {
+    max-width: 800px;
+    margin: auto;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #00ffff;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #ff00ff;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+main {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 4rem;
+    animation: slideUp 1s ease-in-out;
+}
+
+main h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: #ccf2ff;
+    margin-bottom: 1rem;
+    position: relative;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.contact-item {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+}
+
+.contact-item a {
+    color: #00ffff;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    text-align: center;
+    color: #e0e0e0;
+    position: relative;
+    z-index: 1;
+    margin-top: 2rem;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    color: #00ffff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff00ff;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 3px #00ffff, 0 0 6px #00ffff, 0 0 9px #00ffff;
+    }
+    to {
+        text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff, 0 0 24px #00ffff;
+    }
+}
